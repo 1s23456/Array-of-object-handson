@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+              <meta charset="UTF-8">
+              <meta name="viewport" content="width=device-width, initial-scale=1.0">
+              <title>Document</title>
+              <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+              <div>Array of Object</div>
+<h1>Question: let studentRecords = [ <br>
+              {name: 'John',id: 123, marks: 98},<br>
+              {name: 'Baba',id: 101, marks: 23},<br>
+              {name: 'yaga',id: 200, marks: 45},<br>
+              {name: 'Wick',id: 115, marks: 75},<br>
+              ]
+</h1>
+<!-- Q1: -->
+<pre class="main">Q1: We are interested in retrieving only the students' names; all the names should be in caps.
+         ['JOHN', 'BABA', 'YAGA', 'WICK']"</pre>
+         <pre class="ans"> ANS:   studentRecords.map((item)=>{
+                  console.log(item.name.toUpperCase());
+                 })
+              </pre>
+
+<!-- Q2: -->  
+<pre class="main">Q2: Suppose we have the same dataset as above but this time we want to get the details of students who scored more than 50 marks.
+
+              [{name: 'John', id: 123, marks: 98 },{name: 'Wick', id: 115, marks: 75 }]"</pre>  
+              
+ <pre class="ans">ANS: let student = studentRecords.filter((item)=>{
+                             return item.marks>50 
+                 })
+
+         console.log(student);
+              </pre>         
+              
+<!-- Q3: -->
+<pre class="main">Q3:Retrieve the details of students who scored more than 50 marks and have IDs greater than 120.</pre>
+<pre class="ans">ANS:    studentRecords.map((item)=>{
+                            if(item.id>120 && item.marks>50){
+                            console.log(item)
+                            }
+                })
+</pre>
+
+<!-- Q4: -->
+<pre class="main">Q4:Consider the same scenario we have discussed above, but this time we would like to know the sum total of the marks of the students.</pre>
+<pre class="ans">ANS:let student1= studentRecords.reduce((prev,curr)=>{
+                           return prev += curr.marks
+                },0)
+                console.log(student1);
+</pre>
+
+
+<!-- Q5: -->
+<pre class="main">Q5:This time we want to get only the names of the students who scored more than 50 marks from the same dataset used above.</pre>
+<pre class="ans">ANS:studentRecords.map((item)=>{
+                            if(item.marks>50){
+                                           console.log(item.name)
+                             }
+              })</pre>
+
+ <!-- Q6: -->
+<pre class="main">Q6:This time we are required to print the sum of marks of the students with id > 120.</pre>
+<pre class="ans">ANS:let stu = studentRecords.filter((item)=>{
+                            return (item.id>120)
+               }).reduce((pre,cur)=>{
+                             return pre += cur.marks
+               },0)
+              
+              
+               console.log(stu);</pre>
+              
+
+<!-- Q7: -->
+<pre class="main">Q7: This time we are required to print the total marks of the students with marks greater than 50 after a grace of 15 marks has been
+ added to those students who scored less than 50.</pre>
+<pre class="ans">ANS:studentRecords.forEach((student) => { 
+        if (student.marks < 50) { 
+          student.marks += 15; 
+        }
+        const totalMarks = student.marks; 
+        if (totalMarks > 50) { 
+          console.log(`${student.name}: ${totalMarks}`);
+        } 
+      });
+</pre>
+
+
+<!-- Q8: -->
+<pre class="main">Q8:Create 6 objects , each object will have name, class, roll no as properties. Store these objects in an array of objects. </pre>
+<pre class="ans">ANS:let stu1 = {
+        name:"Shikha",
+        class: 7,
+        rollno : 16
+   }
+let stu2 = {
+        name:"Nishu",
+        class: 8,
+        rollno : 17
+    }
+let stu3 = {
+        name:"Astha",
+        class: 9,
+        rollno : 18
+  }
+let stu4 = {
+        name:"Himani",
+        class: 10,
+        rollno : 19
+  }
+let stu5 = {
+        name:"Prachi",
+        class: 11,
+        rollno : 20
+   }
+let stu6 = {
+        name:"Laxmi",
+        class: 12,
+        rollno : 21
+   }
+
+let st7 = new Array(stu1,stu2,stu3,stu4,stu5,stu6);
+console.log(st7);
+
+</pre>
+
+              
+         <script src="./style.js"></script>     
+</body>
+</html>
